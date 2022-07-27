@@ -8,7 +8,7 @@ const mobileMenu = document.querySelector('.mobile-menu');
 
 //Variables carrito de compras 
 const shopingCar = document.querySelector('.navbar-shopping-cart');
-const carList = document.querySelector('.product-detail');
+const shoppingCartContiner = document.querySelector('#shoppingCartContiner');
 
 //Events listener 
 menuEmail.addEventListener('click', toggleDesktopMenu);
@@ -17,20 +17,20 @@ shopingCar.addEventListener('click', toggleShopingCar);
 
 //Funsiones
 function toggleDesktopMenu () {
-    const asideClosed = carList.classList.contains('inactive');
+    const asideClosed = shoppingCartContiner.classList.contains('inactive');
 
     if (!asideClosed) {
-        carList.classList.add('inactive');
+        shoppingCartContiner.classList.add('inactive');
     }
 
     desktopMenu.classList.toggle('inactive');
 }
 
 function toggleMenupMenu () {
-    const asideClosed = carList.classList.contains('inactive');
+    const asideClosed = shoppingCartContiner.classList.contains('inactive');
     
     if (!asideClosed) {
-        carList.classList.add('inactive');
+        shoppingCartContiner.classList.add('inactive');
     }
 
     mobileMenu.classList.toggle('inactive');
@@ -46,7 +46,7 @@ function toggleShopingCar () {
         desktopMenu.classList.add('inactive');
     }
 
-    carList.classList.toggle('inactive');
+    shoppingCartContiner.classList.toggle('inactive');
 }
 
 const productList = [];
@@ -63,16 +63,6 @@ productList.push({
 productList.push({
     name: 'F1 Manager',
     price: 100,
-    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-});
-productList.push({
-    name: 'TV Controller',
-    price: 30,
-    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-});
-productList.push({
-    name: 'G920 Stering Wheel',
-    price: 350,
     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
 });
 
@@ -115,3 +105,4 @@ function renderProducts (arr) {
         cardsContainer.appendChild(productCard);
     }
 }
+renderProducts(productList)
